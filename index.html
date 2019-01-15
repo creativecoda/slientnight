@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Slientnight</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+
+<meta name='author' content='Anthony Clarke' />
+<meta name='copyright' content='2019 - Anthony Clarke' />
+
+<!-- Page styles -->
+<link type='text/css' href='css/stylesheet.css' rel='stylesheet' media='screen' />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+	
+<script type="text/JavaScript">
+// prepare the form when the DOM is ready 
+$(document).ready(function() {
+	var galleryClass = '.gallery';
+	$(galleryClass+' li img').hover(function(){
+		var $gallery = $(this).parents(galleryClass);
+		$('.main-img',$gallery).attr('src',$(this).attr('src').replace('thumb/', ''));
+	});
+	var imgSwap = [];
+	 $(galleryClass+' li img').each(function(){
+		imgUrl = this.src.replace('thumb/', '');
+		imgSwap.push(imgUrl);
+	});
+	$(imgSwap).preload();
+});
+$.fn.preload = function() {
+    this.each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+</script>	
+	
+	
+</head>
+
+<body>
+	<div id="header">
+		<div id="headerbody">
+			<div id="logo"></div>
+			<div id="menu">
+				<ol>
+					<li>
+						<a href="#">home</a>
+					</li>
+					<li>
+						<a href="#">Mattresses</a>
+					</li>
+					<li>
+						<a href="#">Beds</a>
+					</li>
+					<li>
+						<a href="#">Bedding</a>
+					</li>
+					<li>
+						<a href="#">Accessories</a>
+					</li>
+					<li>
+						<a href="#">Mattress-Now</a>
+					</li>
+					<li>
+						<a href="#">Cots & Kids</a>
+					</li>
+					<li>
+						<a href="#">Sale</a>
+					</li>
+					<li>
+						<a href="https://www.silentnight.co.uk">Silentnight.co.uk</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div id="body">
+		<div id="offer_menu">
+			<ol>
+				<li>
+					<a href="#">Free delivery</a>
+				</li>
+				<li>
+					<a href="#">Comfort Guarantee</a>
+				</li>
+				<li>
+					<a href="#">Quality Assured</a>
+				</li>
+				<li>
+					<a href="#">Special Offers</a>
+				</li>
+			</ol>
+		</div>
+		<div id="breadcrumb">
+			<ol>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">Mattresses</a>
+				</li>
+				<li>
+					<a href="#">Silentnight Miracoil Memory Mattress</a>
+				</li>
+			</ol>
+		</div>
+		<div id="content">
+			<div class="gallery">
+		    	<img  class='main-img' src="images/signature-memory-miracoil-lt-close-up-angle-matt_1.jpg" alt=""/>
+					<ul>
+					  <li><img src="images/thumb/signature-memory-miracoil-lt-close-up-angle-matt_1.jpg" alt="" /></li>
+					  <li><img src="images/thumb/memory-miracoil-full-matt_1.jpg" alt="" /></li>
+					  <li><img src="images/thumb/signature-memory-miracoil-rt-angle-matt_2.jpg" alt="" /></li>
+					</ul>
+			</div>
+			<div class="content-copy">
+				<h1>Silentnight Miracoil Memory Mattress</h1>
+				<h2>£419.00</h2>
+				<ul>
+					<li>Miracoil zoned spring system</li>
+					<li>Body moulding memory foam</li>
+					<li>luxurious soft knit cover for extra comfort</li>
+					<li>Matress Depth: 26cm</li>
+					<li>Comfort Level: Firm</li>
+				</ul>
+				<div class="content-select">
+					<div class="title">Size</div>
+					<div class="dropdown">
+						<select name="Icecream Flavours">
+							<option value="single">Single (3'0")</option>
+							<option value="double">Double (4'6")</option>
+							<option value="kinf">King(5'6")</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
